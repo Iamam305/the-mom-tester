@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import SmartlookSnippet from "@/components/smartlook";
+import Script from "next/script";
 
 
 const geistSans = localFont({
@@ -32,6 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head >
+      <SmartlookSnippet />
         <link rel="icon" href="https://iili.io/d8VvJRI.jpg" sizes="any" />
       </head>
       <body
@@ -39,6 +42,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+
+      <Script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f577004fd56a44a3b44fefb0981c0211"}'/>
       </body>
     </html>
   );
