@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { MoveRight, PhoneCall } from "lucide-react";
 import Image from "next/image";
 
@@ -24,18 +25,19 @@ export default function Home() {
               is to streamline SMB trade, making it easier and faster than ever.
             </p>
           </div>
-          <form action={create_questions} className="flex flex-col gap-3">
-            <div className="grid w-full max-w-sm items-center gap-1">
+          <form action={create_questions} className="flex flex-col gap-3 max-w-2xl w-full">
+            <div className="grid w-full items-center gap-1">
               <Label htmlFor="product_idea">Idea</Label>
-              <Input id="product_idea" name="product_idea" type="text" />
+              <Textarea id="product_idea" name="product_idea" className="w-full"/>
+              
             </div>
-            <div className="grid w-full max-w-sm items-center gap-1">
+            <div className="grid w-full items-center gap-1">
               <Label htmlFor="target_audience">Target audience</Label>
-              <Input id="target_audience" name="target_audience" type="text" />
+              <Input id="target_audience" name="target_audience" type="text" className="w-full"/>
             </div>
-            <div className="grid w-full max-w-sm items-center gap-1">
+            <div className="grid w-full items-center gap-1">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" />
+              <Input id="email" name="email" type="email" className="w-full" />
             </div>
             <Button variant="default" type="submit">Generate</Button>
           </form>
