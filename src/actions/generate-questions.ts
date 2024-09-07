@@ -1,3 +1,5 @@
+"use server";
+
 import { PromptTemplate } from "@langchain/core/prompts";
 import { ChatGroq } from "@langchain/groq";
 import {
@@ -9,7 +11,6 @@ import prisma from "../../prisma";
 import { redirect } from "next/navigation";
 
 export async function create_questions(formData: FormData) {
-  "use server";
 
   const product_idea = formData.get("product_idea") as string;
   const target_audience = formData.get("target_audience") as string;
