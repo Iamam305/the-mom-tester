@@ -1,6 +1,6 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import prisma from "../../../../prisma"
+"use server"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import prisma from "../../../../prisma"
 
 const Page = async ({ params }: { params: { id: string } }) => {
     const questions = await prisma.idea.findFirst({
