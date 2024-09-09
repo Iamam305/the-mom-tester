@@ -1,14 +1,15 @@
-"use client"
+
 import { create_questions } from "@/actions/generate-questions";
+import SubmitButton from "@/components/SubmitButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useFormStatus } from "react-dom";
+
 
 export default function Home() {
-  const { pending } = useFormStatus()
+  
   return (
 
     <div className="w-full  py-20 lg:py-20 px-4">
@@ -47,9 +48,7 @@ export default function Home() {
                   <Label htmlFor="email">Email</Label>
                   <Input required={true} id="email" name="email" type="email" className="w-full" />
                 </div>
-                <Button disabled={pending} variant="default" type="submit">
-                  {pending ? "Generating..." : "Generate"}
-                </Button>
+                <SubmitButton/>
               </form>
             </CardContent>
 
